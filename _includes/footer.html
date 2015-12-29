@@ -2,36 +2,20 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
-      </div>
+    <div class="footer-content">
+      <h3>Micro dosing</h3> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt dolore optio quis officia suscipit itaque consequuntur, at similique nisi voluptatem reprehenderit repudiandae repellendus perspiciatis, quae, inventore fugiat.</p> 
+      <p>subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl}}">via RSS</a></p>
     </div>
+
+<div class="footer-social">
+  <ul>
+    <li><a href="http://www.twitter.com{{ site.twitter_username }}"><img src="images/twitter.png" width="40px"></a></li>
+    <li><a href="http://www.twitter.com{{ site.github_username }}"><img src="images/github.png" width="40px"></a></li>
+    <li><a href="http://www.twitter.com{{ site.google_username }}"><img src="images/google.png" width="40px"></a></li>
+  </ul>
+</div>
+
 
   </div>
 
