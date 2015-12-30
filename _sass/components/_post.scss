@@ -1,0 +1,25 @@
+.post-list{
+	@extend %clearfix;
+	list-style: none;
+
+
+	&:nth-child(odd){
+		clear: both;
+	}
+
+	.post_readmore_link{
+		text-align: center; 
+	}
+}
+
+
+.post{
+	float: left;
+	width: 50%;
+	padding: 0 3em 1em;
+}
+.post-featured{
+	float: none;
+	margin: 0 auto;
+}
+

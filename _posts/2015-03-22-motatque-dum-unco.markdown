@@ -4,6 +4,7 @@ title:  "Motatque dum unco"
 date:   2015-03-22 11:12:47
 categories: blog
 tags: snippet
+featured: true
 ---
 
 ## Inmune venatum excidit partes

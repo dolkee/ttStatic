@@ -1,27 +1,44 @@
 ---
 layout: default
----
+--- 
+<!-- section for featured post -->
+<section class="site-section site-section-last">
+  <div class="wrapper">
 
-<div class="home">
+    <h1>Featured Article</h1>
 
-  <!-- section for featured post -->
-  <!-- section for featured project -->
-  <!-- section for latest articles -->
+    {% assign count = 0 %}
+    {% for post in site.posts reversed %}
+    {% if post.featured == true  and count < 1 %}
 
-  <section class="site-section site-section-last">
-    <div class="wrapper">
-      
-      <h1>Latest articles</h1>
-
-      <ul class="post-list">
-        <li class="post">
-          <h2>post title</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse cum natus mollitia placeat vero fuga, est voluptatum beatae deleniti et facilis facere nobis porro fugit.</p>
-          <p class="post_readmore_link"><a href="#">read more...</a></p>
-        </li>
-      </ul>
+    <div class="post post-featured">
+      {% include post.html %}
     </div>
-  </section>
+
+
+    {% assign count = count | plus: 1 %}
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- section for featured project -->
+<!-- section for latest articles -->
+
+<section class="site-section site-section-last">
+  <div class="wrapper">
+
+    <h1>Latest articles</h1>
+
+    <ul class="post-list">
+      {% for post in site.posts reversed | limit:4 %}
+      <li class="post">
+        {% include post.html %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
 
 
 </div>
