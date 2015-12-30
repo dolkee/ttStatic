@@ -2,13 +2,13 @@
 layout: default
 --- 
 <!-- section for featured post -->
-<section class="site-section site-section-last">
+<section class="site-section">
   <div class="wrapper">
 
     <h1>Featured Article</h1>
 
     {% assign count = 0 %}
-    {% for post in site.posts reversed %}
+    {% for post in site.categories['blog'] reversed %}
     {% if post.featured == true  and count < 1 %}
 
     <div class="post post-featured">
@@ -23,6 +23,16 @@ layout: default
 </section>
 
 <!-- section for featured project -->
+
+<section class="site-section">
+  <h1>Featured projects</h1>
+  <ul class="project-list">
+    {% for project in site.categories['project'] reversed | limit:3 %}
+    {% include project.html %}
+    {% endfor %}
+  </ul>
+</section>
+
 <!-- section for latest articles -->
 
 <section class="site-section site-section-last">
@@ -31,7 +41,7 @@ layout: default
     <h1>Latest articles</h1>
 
     <ul class="post-list">
-      {% for post in site.posts reversed | limit:4 %}
+      {% for post in site.categories['blog'] reversed | limit:4 %}
       <li class="post">
         {% include post.html %}
       </li>
